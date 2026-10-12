@@ -32,12 +32,12 @@ jobs:
         run: flutter analyze
       - name: Build release APK
         env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: flutter build apk --release --dart-define=TMDB_API_KEY="$TMDB_API_KEY"
+          OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+        run: flutter build apk --release --dart-define=OMDB_API_KEY="$OMDB_API_KEY"
       - name: Build web release
         env:
-          TMDB_API_KEY: ${{ secrets.TMDB_API_KEY }}
-        run: flutter build web --release --dart-define=TMDB_API_KEY="$TMDB_API_KEY"
+          OMDB_API_KEY: ${{ secrets.OMDB_API_KEY }}
+        run: flutter build web --release --dart-define=OMDB_API_KEY="$OMDB_API_KEY"
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
         with:
