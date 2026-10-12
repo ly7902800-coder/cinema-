@@ -110,7 +110,7 @@ class ItemCard extends StatelessWidget {
   @override Widget build(BuildContext context) {
     final validImage = item.poster.isNotEmpty && item.poster != 'N/A';
     return InkWell(borderRadius: BorderRadius.circular(18), onTap: onOpen, child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-      Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(18), child: Container(width: double.infinity, color: const Color(0xFF202333), child: !validImage ? const Center(child: Icon(Icons.movie_outlined, size: 44)) : Image.network(item.poster, fit: BoxFit.cover, errorBuilder: (_, __, ___) => const Center(child: Icon(Icons.movie_outlined, size: 44))))),
+      Expanded(child: ClipRRect(borderRadius: BorderRadius.circular(18), child: Container(width: double.infinity, color: const Color(0xFF202333), child: !validImage ? const Center(child: Icon(Icons.movie_outlined, size: 44)) : Image.network(item.poster, fit: BoxFit.cover, errorBuilder: (_, __, ___) => const Center(child: Icon(Icons.movie_outlined, size: 44)))))),
       const SizedBox(height: 8), Text(item.title, maxLines: 2, overflow: TextOverflow.ellipsis, style: const TextStyle(fontWeight: FontWeight.w800, fontSize: 14)), const SizedBox(height: 5),
       Row(children: [const Icon(Icons.star_rounded, size: 17, color: Color(0xFFFBBF24)), const SizedBox(width: 4), Text(item.rating == 'N/A' ? '—' : item.rating, style: const TextStyle(color: Colors.white70, fontSize: 12)), const Spacer(), Text(item.year, style: const TextStyle(color: Colors.white54, fontSize: 12))])
     ]));
